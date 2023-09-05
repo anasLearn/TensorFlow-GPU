@@ -10,7 +10,8 @@ Using this docker image, you can make TensorFlow-2.13.0 use GPU when training NN
 
 
 # Usage:
-Define the folder where you have your projects files in the file `.env`. In the example attached, all the notebook and training data will be in a folder `training/` in the Docker host machine.
+In the docker compose, define the folder where you will have your Jupyter Notebooks.
+In the example attached, all the notebook and training data will be in a folder `training/` in the Docker host machine.
 
 Run:
 ```

@@ -4,7 +4,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ${project-folder}}:/training
+      - ../training:/training
     deploy:
       resources:
         reservations:
