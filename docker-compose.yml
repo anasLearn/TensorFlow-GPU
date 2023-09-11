@@ -1,10 +1,18 @@
 services:
   jupyter-lab:
-    build: .
+    image: tensorflow/tensorflow:2.13.0-gpu
     ports:
       - "8888:8888"
     volumes:
       - ../training:/training
+    command:
+      - /bin/sh
+      - -c
+      - |
+        cd /training &&
+        pip install --upgrade pip &&
+        pip install --upgrade jupyterlab matplotlib pandas &&
+        jupyter lab --ip=0.0.0.0 --allow-root --no-browser
     deploy:
       resources:
         reservations:
@@ -12,4 +20,3 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-
