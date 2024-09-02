@@ -1,4 +1,7 @@
-FROM tensorflow/tensorflow:2.17.0-gpu
+FROM tensorflow/tensorflow:2.13.0-gpu
+
+# Set environment variable to suppress TensorFlow warnings and Errors
+ENV TF_CPP_MIN_LOG_LEVEL=3
 
 # This specifies the directory to work
 WORKDIR /training  
